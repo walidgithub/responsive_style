@@ -5,6 +5,7 @@ DeviceType getDeviceType(MediaQueryData mediaQueryData) {
   Orientation orientation = mediaQueryData.orientation;
   double width = 0;
   if (orientation == Orientation.landscape) {
+    // in landscape view width is the height and vise versa
     width = mediaQueryData.size.height;
   } else {
     width = mediaQueryData.size.width;

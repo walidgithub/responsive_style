@@ -6,19 +6,26 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // media query let me know the dimensions of screen
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: SizedBox(
-          width: screenWidth,
-          height: screenHeight,
+        body: Container(
+          color: Colors.black,
+          width: screenWidth / 2,
+          height: screenHeight / 2,
+          // infoWidget is a class use layout builder to get the screen info (width and height) and orientation and the widget info (width and height)
           child: InfoWidget(
             builder: (context, deviceInfo) {
-              return const Column(
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('walid mohamed mohamed hassan barakat'),
-                  Text('Flutter developer'),
+                  Container(
+                    color: Colors.red,
+                    width: deviceInfo.localWidth / 2,
+                    height: deviceInfo.localHeight / 2,
+                  )
                 ],
               );
             },
